@@ -68,8 +68,8 @@ public class Utility {
     }
 
     public Boolean sendOTP(String email, int otp) {
-        String from = "b.madbhave@gmail.com";
-        String password = "xnooqrguzjrwnvxu";
+        String from = "javamicroproject@gmail.com";
+        String password = "ckmsxzesggxgnxvx";
         String to = email;
         String subject = "OTP for login";
         String body = "Your OTP is " + otp;
@@ -87,6 +87,11 @@ public class Utility {
         props.put("mail.smtp.port", "465");
         props.put("mail.smtp.ssl.enable", "true");
 
+        // Set the SSL/TLS protocol and cipher suite
+        props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+        props.put("mail.smtp.ssl.ciphersuites", "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256");
+
+
         Session session = Session.getInstance(props, new javax.mail.Authenticator() {
             protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(from, password);
@@ -100,7 +105,10 @@ public class Utility {
             message.setText(body);
             Transport.send(message);
         } catch (MessagingException e) {
+            System.out.println("Somthing Went Wrong!!! Please try again");
             e.printStackTrace();
+            System.out.println("Error : "+e.getMessage());
+            System.out.println("Cause : "+e.getCause());
             return Boolean.FALSE;
         }
         return Boolean.TRUE;
