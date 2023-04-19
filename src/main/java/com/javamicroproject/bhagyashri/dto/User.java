@@ -8,27 +8,6 @@ public class User {
     private int otp;
     private Long otpTime;
 
-//    public User(String name, String number, String email, int otp, Long otpTime) {
-//        this.name = name;
-//        this.number = number;
-//        this.email = email;
-//        this.otp = otp;
-//        this.otpTime = otpTime;
-//    }
-//
-//
-//    public User(String name, String number, String email) {
-//        this.name = name;
-//        this.number = number;
-//        this.email = email;
-//    }
-//
-//    public User(int otp,Long otpTime, String email) {
-//        this.otp = otp;
-//        this.otpTime = otpTime;
-//        this.email = email;
-//    }
-
     public int getId() {
         return id;
     }

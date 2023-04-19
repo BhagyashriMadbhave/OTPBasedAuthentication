@@ -49,7 +49,6 @@ public class Utility {
     }
 
     public Boolean generateOTP(String email) {
-        Random random = new Random();
         Utility utility = new Utility();
         User user = new User();
         user.setOtp((int)(Math.random() * 9000) + 1000);
